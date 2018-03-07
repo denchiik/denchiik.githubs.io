@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title></title>
+	<link href="css/style.css" rel="stylesheet">
+
+    <!--Add jQuery library -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+
+</head>
+<body>
+<p class="open_modal"><a href="" class="pop-form" data-product="Форма 1">Открыть форму</a></p>
+
+    <div class="overlay"></div>
+    <div class="popup">
+        <div class="close_modal">x</div>
+        <form class="fofm" action="">
+            <h5>Форма обратной связи</h5>
+            <input type="text" required placeholder="Имя" name="txtname">
+            <input type="email" required placeholder="Email" name="txtemail">
+            <input type="tel" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required placeholder="Телефон" name="txtphone">
+            <textarea name="txtmessage" placeholder="Описание" rows="10"></textarea>
+            <input type="hidden" name="txtorder" id="hidden-form" value="">
+            <input type="hidden" name="valTrFal" class="valTrFal" value="valTrFal_true">
+            <input type="submit" class="button" value="Заказать" name="btnsend">
+        </form>
+        
+    </div>
+
+    <div class="popup2">
+    <div class="close_modal">x</div>
+    	<div class="window">
+    		<div class="insText">
+    			<h5>запрос отправлен</h5>
+    			<p><strong>Ваш запрос отправлен.</strong>Наш менеджер свяжется с вами в ближайшее время!</p>
+    		</div>
+    	</div>
+    </div>
+
+
+<script>
+$('a.pop-form').on('click',function(){
+var mysuperdata = $(this).attr('data-product');
+$('input#hidden-form').val(mysuperdata);
+});
+</script>
+</body>
+</html>
